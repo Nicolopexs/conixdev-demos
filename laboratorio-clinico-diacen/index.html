@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diacen Laboratorio Clínico · Exámenes exactos, precios justos · Cuenca</title>
+<meta name="description" content="Diacen, laboratorio clínico microbiológico en Cuenca. Servicio 24 horas, toma de muestras a domicilio sin recargo, fichas ocupacionales y cotización sin compromiso por WhatsApp.">
+<meta name="theme-color" content="#04284A">
+<link rel="icon" href="img/logo-icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Kalam:wght@700&display=swap" rel="stylesheet">
+<style>
+/*
+  Demo de ConixDev para Diacen Laboratorio Clínico (Cuenca).
+  Sigue su identidad real: azul marino y azul del logo (#04284A / #0A5F93),
+  celeste de sus botones tipo píldora (#28A8D2), fondos celeste claro,
+  curvas suaves y moléculas como en sus publicaciones.
+*/
+:root {
+    --navy: #04284A;
+    --navy-2: #0B3863;
+    --blue: #0A5F93;
+    --cyan: #28A8D2;
+    --cyan-2: #1C8FB8;
+    --sky: #EAF6FB;
+    --sky-2: #D7EEF8;
+    --text: #13263D;
+    --muted: #55677D;
+    --line: #DCE8F0;
+    --green: #3FA66B;
+    --wa: #1FA855;
+    --r: 20px;
+    --shadow: 0 18px 40px -18px rgba(4, 40, 74, .35);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { font-family: 'Nunito Sans', system-ui, sans-serif; color: var(--text); background: #fff; line-height: 1.6; font-size: 16.5px; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+img, svg { display: block; max-width: 100%; }
+button, input { font: inherit; color: inherit; }
+.wrap { width: min(1200px, 100% - 40px); margin: 0 auto; }
+h1, h2, h3, h4, .mont { font-family: 'Montserrat', sans-serif; line-height: 1.12; letter-spacing: -.01em; }
+
+/* ---------- Logo ---------- */
+.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); }
+.logo img { height: 50px; width: auto; }
+.logo .lt { display: flex; flex-direction: column; line-height: 1; }
+.logo .lt b { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: .02em; }
+.logo .lt i { font-family: 'Kalam', cursive; font-style: normal; font-weight: 700; font-size: 16px; color: var(--navy); margin-top: 2px; }
+.logo.light { color: #fff; }
+.logo.light .lt i { color: #BFE6F5; }
+
+/* ---------- Botones ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14.5px; letter-spacing: .02em; padding: 15px 26px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: transform .15s, background .15s, box-shadow .15s; white-space: nowrap; }
+.btn:hover { transform: translateY(-2px); }
+.btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.btn-wa { background: var(--wa); color: #fff; box-shadow: 0 10px 22px -10px rgba(31,168,85,.7); }
+.btn-wa:hover { background: #18934A; }
+.btn-navy { background: var(--navy); color: #fff; }
+.btn-navy:hover { background: var(--navy-2); }
+.btn-cyan { background: var(--cyan); color: #fff; }
+.btn-cyan:hover { background: var(--cyan-2); }
+.btn-line { border-color: var(--navy); color: var(--navy); background: #fff; }
+.btn-line:hover { background: var(--sky); }
+.btn-white { background: #fff; color: var(--navy); }
+.btn-sm { padding: 10px 18px; font-size: 13px; }
+.i { width: 20px; height: 20px; flex: none; }
+.pill { display: inline-flex; align-items: center; gap: 8px; background: var(--cyan); color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; padding: 8px 16px; border-radius: 999px; }
+.pill.soft { background: #fff; color: var(--blue); box-shadow: 0 6px 16px -8px rgba(4,40,74,.3); }
+
+/* ---------- Aviso + barra superior ---------- */
+.ribbon { background: #021A31; color: #A9C3DA; font-size: 12.5px; text-align: center; padding: 7px 16px; }
+.ribbon b { color: #fff; }
+.topbar { background: var(--navy); color: #CFE0EE; font-size: 13.5px; }
+.topbar .wrap { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; flex-wrap: wrap; }
+.topbar span { display: inline-flex; gap: 8px; align-items: center; }
+.topbar b { color: #fff; font-weight: 700; }
+.topbar .dot { width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 4px rgba(74,222,128,.2); }
+
+/* ---------- Cabecera ---------- */
+.header { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); transition: box-shadow .2s; }
+.header.scrolled { box-shadow: 0 8px 24px -16px rgba(4,40,74,.4); }
+.header .wrap { display: flex; align-items: center; justify-content: space-between; height: 82px; gap: 20px; }
+.menu { display: flex; gap: 6px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; }
+.menu a { text-decoration: none; color: var(--navy); padding: 9px 14px; border-radius: 999px; transition: background .15s; }
+.menu a:hover { background: var(--sky); }
+.head-cta { display: flex; gap: 10px; align-items: center; }
+
+/* ---------- Portada ---------- */
+.hero { position: relative; background: linear-gradient(180deg, #E3F3FA 0%, #F4FAFD 70%, #fff 100%); overflow: hidden; }
+.hero .mol { position: absolute; width: 260px; opacity: .55; pointer-events: none; }
+.hero .mol.a { left: -110px; top: 300px; opacity: .3; }
+.hero .mol.b { right: -40px; bottom: 90px; width: 220px; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding: 70px 0 130px; }
+.hero h1 { font-size: clamp(40px, 5.2vw, 68px); font-weight: 900; color: var(--navy); margin: 22px 0 20px; }
+.hero h1 span { color: var(--cyan-2); display: block; }
+.hero .lead { font-size: 19.5px; color: var(--muted); max-width: 31em; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.checks { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 30px; list-style: none; }
+.checks li { display: inline-flex; gap: 8px; align-items: center; font-weight: 700; color: var(--navy); font-size: 15px; }
+.checks svg { width: 22px; height: 22px; color: var(--green); }
+
+/* Tarjeta de resultados (ilustración) */
+.visual { position: relative; justify-self: end; width: 100%; max-width: 500px; }
+.visual .circle { position: absolute; inset: 6% 2% 4% 10%; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff 0, var(--sky-2) 60%, #BFE3F3 100%); }
+.visual .scope { position: absolute; right: -6px; top: -16px; width: 150px; opacity: .14; }
+.report { position: relative; background: #fff; border-radius: 24px; box-shadow: 0 30px 60px -24px rgba(4,40,74,.45); padding: 26px; margin: 40px 30px 40px 0; }
+.report-h { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 6px; }
+.report-h .logo img { height: 36px; } .report-h .logo .lt b { font-size: 21px; } .report-h .logo .lt i { font-size: 12px; }
+.report-h small { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: .1em; color: var(--muted); text-align: right; }
+.report-h small b { display: block; color: var(--green); font-size: 13px; letter-spacing: .02em; }
+.row { display: grid; grid-template-columns: 1fr auto auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--line); font-size: 14.5px; }
+.row span { font-weight: 700; color: var(--navy); }
+.row em { font-style: normal; color: var(--muted); font-size: 13.5px; }
+.row b { font-family: 'Montserrat', sans-serif; font-size: 11.5px; letter-spacing: .06em; color: var(--green); background: #E7F6EE; padding: 4px 10px; border-radius: 999px; }
+.bar { height: 6px; border-radius: 6px; background: var(--sky); margin-top: 18px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, var(--cyan), var(--blue)); border-radius: 6px; animation: load 2.4s ease-out both; }
+@keyframes load { from { width: 0; } }
+.report-f { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+.chip { position: absolute; background: #fff; border-radius: 16px; box-shadow: var(--shadow); padding: 12px 16px; display: flex; gap: 12px; align-items: center; font-size: 13.5px; line-height: 1.3; animation: float 6s ease-in-out infinite; }
+.chip b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--navy); font-size: 14.5px; }
+.chip .ci { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--sky); color: var(--blue); flex: none; }
+.chip .ci svg { width: 22px; height: 22px; }
+.chip.c1 { left: -46px; top: 8px; }
+.chip.c2 { right: -18px; bottom: -14px; animation-delay: -3s; }
+.chip.c3 { left: -40px; bottom: 0; animation-delay: -1.5s; }
+.stars { color: #F5B301; letter-spacing: 1px; }
+@keyframes float { 50% { transform: translateY(-8px); } }
+
+.wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 70px; }
+
+/* ---------- Accesos rápidos ---------- */
+.quick { position: relative; z-index: 2; margin-top: -78px; }
+.quick .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.quick a { display: flex; flex-direction: column; gap: 6px; padding: 26px 24px; text-decoration: none; background: #fff; border-radius: var(--r); box-shadow: var(--shadow); border: 1px solid var(--line); transition: transform .2s, border-color .2s; }
+.quick a:hover { transform: translateY(-4px); border-color: var(--cyan); }
+.quick .qi { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, var(--cyan), var(--blue)); margin-bottom: 10px; }
+.quick .qi svg { width: 26px; height: 26px; }
+.quick b { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 17px; color: var(--navy); }
+.quick small { font-size: 14.5px; color: var(--muted); }
+.quick a > div { display: flex; flex-direction: column; gap: 2px; }
+
+/* ---------- Secciones ---------- */
+section { padding: 96px 0; position: relative; }
+.title { margin-bottom: 44px; max-width: 760px; }
+.title.center { margin-left: auto; margin-right: auto; text-align: center; }
+.title .pill { margin-bottom: 16px; }
+.title h2 { font-size: clamp(30px, 3.8vw, 46px); font-weight: 900; color: var(--navy); }
+.title h2 span { color: var(--cyan-2); }
+.title p { color: var(--muted); margin-top: 14px; font-size: 18px; }
+
+/* Chequeos (de sus publicaciones) */
+.checkups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ck { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 28px; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; position: relative; overflow: hidden; }
+.ck:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.ck::after { content: ''; position: absolute; right: -50px; top: -50px; width: 140px; height: 140px; border-radius: 50%; background: var(--sky); z-index: 0; }
+.ck > * { position: relative; z-index: 1; }
+.ck .tag { align-self: flex-start; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); background: var(--sky); padding: 6px 12px; border-radius: 999px; }
+.ck .ico { width: 58px; height: 58px; border-radius: 50%; background: #fff; border: 2px solid var(--sky-2); display: grid; place-items: center; position: absolute; right: 22px; top: 22px; color: var(--cyan-2); }
+.ck .ico svg { width: 28px; height: 28px; }
+.ck h3 { font-size: 23px; font-weight: 900; color: var(--navy); margin: 18px 0 6px; padding-right: 64px; }
+.ck .for { font-size: 14.5px; color: var(--muted); }
+.ck ul { list-style: none; display: grid; gap: 9px; margin: 18px 0 24px; flex: 1; align-content: start; }
+.ck li { display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; font-weight: 600; }
+.ck li::before { content: ''; flex: none; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%; background: var(--sky-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A5F93' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/11px no-repeat; }
+.ck .add { align-self: flex-start; }
+.ck .add.on { background: var(--green); border-color: var(--green); color: #fff; }
+.ck.feat { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 60%, var(--blue) 100%); color: #fff; border: 0; }
+.ck.feat::after { background: rgba(40,168,210,.18); }
+.ck.feat h3 { color: #fff; } .ck.feat .for { color: #BFD6E8; }
+.ck.feat .tag { background: var(--cyan); color: #fff; }
+.ck.feat .ico { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2); color: #fff; }
+.ck.feat li::before { background-color: var(--cyan); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E"); }
+.ck.feat .btn-line { background: transparent; color: #fff; border-color: #fff; }
+.ck.feat .btn-line:hover { background: rgba(255,255,255,.1); }
+
+/* Microbiología */
+.micro { background: var(--sky); overflow: hidden; }
+.micro .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: center; }
+.dish { position: relative; aspect-ratio: 1; max-width: 440px; width: 100%; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #F4FBF3 0 58%, #E1F2E4 60%, #CFE8D6 66%, #fff 67%, #fff 70%, var(--sky-2) 71%, #BEE1F1 100%); box-shadow: inset 0 0 0 10px rgba(255,255,255,.7), 0 30px 60px -30px rgba(4,40,74,.4); justify-self: center; }
+.dish .col { position: absolute; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #CDE9A8, #8FC56E); opacity: .9; }
+.dish .disk { position: absolute; width: 13%; aspect-ratio: 1; border-radius: 50%; background: #fff; box-shadow: 0 0 0 16px rgba(255,255,255,.55), 0 0 0 17px rgba(10,95,147,.15); display: grid; place-items: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11px; color: var(--blue); }
+.dish .badge { position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); white-space: nowrap; }
+.micro-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 30px; }
+.micro-list div { background: #fff; border-radius: 18px; padding: 20px; }
+.micro-list b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--navy); font-size: 16px; margin-bottom: 4px; }
+.micro-list span { font-size: 14.5px; color: var(--muted); }
+.quote { margin-top: 28px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--blue); font-size: 19px; display: flex; gap: 12px; align-items: center; }
+.quote::before { content: ''; width: 36px; height: 3px; background: var(--cyan); border-radius: 3px; }
+
+/* ---------- Cotizador ---------- */
+.quote-sec { background: #fff; }
+.qz { display: grid; grid-template-columns: 1.45fr .85fr; gap: 28px; align-items: start; }
+.qz-pick { border: 1px solid var(--line); border-radius: 24px; padding: 26px; background: #fff; }
+.search { position: relative; }
+.search svg { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--muted); }
+.search input { width: 100%; border: 2px solid var(--line); border-radius: 999px; padding: 15px 20px 15px 50px; font-size: 16px; background: #F8FBFD; transition: border-color .15s; }
+.search input:focus { border-color: var(--cyan); outline: none; background: #fff; }
+.cats { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 8px; }
+.cats button { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 8px 15px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; color: var(--navy); cursor: pointer; }
+.cats button.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+.exams { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; max-height: 470px; overflow: auto; padding: 2px 6px 2px 2px; }
+.exam { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; cursor: pointer; transition: border-color .15s, background .15s; text-align: left; background: #fff; width: 100%; }
+.exam:hover { border-color: var(--cyan); }
+.exam .bx { width: 22px; height: 22px; flex: none; border-radius: 7px; border: 2px solid #B9CCDA; display: grid; place-items: center; transition: background .15s, border-color .15s; }
+.exam .bx svg { width: 14px; height: 14px; color: #fff; opacity: 0; }
+.exam span { font-weight: 700; font-size: 14.5px; line-height: 1.3; color: var(--navy); }
+.exam small { display: block; font-weight: 600; font-size: 12px; color: var(--muted); }
+.exam[aria-pressed="true"] { background: var(--sky); border-color: var(--cyan); }
+.exam[aria-pressed="true"] .bx { background: var(--cyan); border-color: var(--cyan); }
+.exam[aria-pressed="true"] .bx svg { opacity: 1; }
+.empty-s { grid-column: 1/-1; color: var(--muted); padding: 20px; text-align: center; }
+
+.qz-sum { position: sticky; top: 104px; background: linear-gradient(170deg, var(--navy), var(--navy-2)); color: #fff; border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+.qz-sum h3 { font-size: 22px; font-weight: 900; display: flex; justify-content: space-between; align-items: center; }
+.qz-sum h3 em { font-style: normal; background: var(--cyan); border-radius: 999px; min-width: 34px; height: 34px; display: grid; place-items: center; font-size: 15px; padding: 0 10px; }
+.sel { list-style: none; margin: 18px 0; display: grid; gap: 8px; max-height: 230px; overflow: auto; }
+.sel li { display: flex; justify-content: space-between; gap: 10px; align-items: center; background: rgba(255,255,255,.08); border-radius: 12px; padding: 9px 12px; font-size: 14.5px; font-weight: 600; }
+.sel li button { background: none; border: 0; color: #9FC2DC; cursor: pointer; font-size: 20px; line-height: 1; padding: 0 4px; }
+.sel .none { background: none; color: #9FC2DC; font-weight: 400; padding: 0; }
+.opt { display: grid; grid-template-columns: 1fr 1fr; background: rgba(255,255,255,.08); border-radius: 999px; padding: 4px; margin-bottom: 14px; }
+.opt button { border: 0; background: none; color: #CFE0EE; border-radius: 999px; padding: 10px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; cursor: pointer; }
+.opt button.on { background: #fff; color: var(--navy); }
+.qz-sum input { width: 100%; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.06); color: #fff; border-radius: 14px; padding: 13px 16px; margin-bottom: 14px; }
+.qz-sum input::placeholder { color: #9FC2DC; }
+.qz-sum .btn { width: 100%; }
+.qz-sum .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.qz-sum .note { font-size: 13px; color: #A9C3DA; margin-top: 14px; display: flex; gap: 8px; }
+.qz-sum .note svg { width: 18px; height: 18px; flex: none; color: #4ADE80; margin-top: 1px; }
+
+/* ---------- Domicilio ---------- */
+.home { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 55%, var(--blue) 100%); color: #fff; overflow: hidden; }
+.home .mol { position: absolute; right: -40px; top: 30px; width: 280px; opacity: .12; }
+.home .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+.home .title h2 { color: #fff; } .home .title p { color: #C9DCEB; }
+.home .title h2 span { color: #7FD4F0; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: s; }
+.steps div { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 22px 20px; }
+.steps div::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--cyan); font-family: 'Montserrat', sans-serif; font-weight: 900; margin-bottom: 14px; }
+.steps b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 16px; }
+.steps span { font-size: 14.5px; color: #C9DCEB; }
+.free { background: #fff; color: var(--navy); border-radius: 28px; padding: 34px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.5); }
+.free .big { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 64px; line-height: 1; color: var(--cyan-2); }
+.free .big small { font-size: 18px; color: var(--navy); margin-left: 6px; }
+.free p { color: var(--muted); margin: 10px 0 22px; }
+.tel { display: flex; justify-content: space-between; align-items: center; gap: 14px; border-top: 1px solid var(--line); padding: 16px 0; flex-wrap: wrap; }
+.tel small { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .1em; color: var(--muted); }
+.tel b { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 25px; }
+
+/* ---------- Empresas ---------- */
+.biz .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.ficha { position: relative; background: var(--sky); border-radius: 28px; padding: 36px; }
+.sheet { background: #fff; border-radius: 18px; padding: 26px; box-shadow: var(--shadow); transform: rotate(-2deg); }
+.sheet h4 { font-weight: 900; color: var(--navy); font-size: 18px; letter-spacing: .02em; text-transform: uppercase; }
+.sheet .sub { display: inline-block; background: var(--cyan); color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: .1em; padding: 4px 10px; border-radius: 6px; margin: 6px 0 16px; }
+.sheet .line { display: grid; grid-template-columns: 110px 1fr; gap: 10px; font-size: 13.5px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+.sheet .line i { font-style: normal; color: var(--muted); }
+.sheet .line u { text-decoration: none; height: 10px; border-radius: 6px; background: var(--sky-2); align-self: center; }
+.sheet .apto { margin-top: 16px; display: inline-flex; gap: 8px; align-items: center; color: var(--green); font-family: 'Montserrat', sans-serif; font-weight: 900; border: 2px solid var(--green); border-radius: 10px; padding: 6px 14px; transform: rotate(-4deg); }
+.ficha .chip { position: absolute; right: -16px; bottom: -18px; animation: none; }
+.biz-list { display: grid; gap: 14px; margin: 28px 0 30px; }
+.biz-list > div { display: flex; gap: 16px; align-items: flex-start; }
+.biz-list .bi { width: 46px; height: 46px; border-radius: 14px; background: var(--sky); color: var(--blue); display: grid; place-items: center; flex: none; }
+.biz-list .bi svg { width: 24px; height: 24px; }
+.biz-list b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--navy); font-size: 16.5px; }
+.biz-list span { color: var(--muted); font-size: 15px; }
+
+/* ---------- Confianza ---------- */
+.trust { padding: 0; }
+.trust .wrap { display: grid; grid-template-columns: repeat(4, 1fr); background: #fff; border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+.trust .wrap > div { padding: 30px 20px; text-align: center; }
+.trust .wrap > div + div { border-left: 1px solid var(--line); }
+.trust b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 40px; color: var(--navy); line-height: 1.1; }
+.trust b em { font-style: normal; color: var(--cyan-2); }
+.trust span { font-size: 14.5px; color: var(--muted); font-weight: 600; }
+
+/* ---------- Consejos ---------- */
+.tips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.tip { border-radius: 24px; overflow: hidden; border: 1px solid var(--line); display: flex; flex-direction: column; background: #fff; transition: transform .2s, box-shadow .2s; }
+.tip:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.tip-art { height: 170px; display: grid; place-items: center; position: relative; overflow: hidden; }
+.tip-art svg { width: 84px; height: 84px; position: relative; }
+.tip-art.t1 { background: linear-gradient(135deg, #E3F3FA, #C6E6F4); color: var(--blue); }
+.tip-art.t2 { background: linear-gradient(135deg, #FCE9E4, #F6CFC4); color: #B5452B; }
+.tip-art.t3 { background: linear-gradient(135deg, #E8F5EC, #CBE8D4); color: #2E7D4F; }
+.tip-art::after { content: ''; position: absolute; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,.45); right: -70px; bottom: -90px; }
+.tip-b { padding: 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.tip-b small { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .1em; color: var(--cyan-2); text-transform: uppercase; }
+.tip-b h3 { font-size: 20px; font-weight: 800; color: var(--navy); }
+.tip-b p { font-size: 15px; color: var(--muted); flex: 1; }
+.tip-b a { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--blue); text-decoration: none; margin-top: 6px; }
+
+/* ---------- Preguntas ---------- */
+.faq-sec { background: var(--sky); }
+.faq-sec .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
+.faq { display: grid; gap: 12px; }
+.faq details { background: #fff; border-radius: 18px; padding: 4px 24px; }
+.faq summary { cursor: pointer; list-style: none; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--navy); font-size: 16.5px; padding: 18px 0; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; width: 30px; height: 30px; flex: none; border-radius: 50%; background: var(--sky); color: var(--blue); display: grid; place-items: center; font-size: 20px; transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--muted); padding-bottom: 20px; }
+
+/* ---------- Contacto ---------- */
+.contact .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 0; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); }
+.c-info { padding: 44px; background: #fff; }
+.c-info h2 { font-size: 34px; font-weight: 900; color: var(--navy); margin: 14px 0 24px; }
+.c-row { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.c-row .bi { width: 44px; height: 44px; border-radius: 14px; background: var(--sky); color: var(--blue); display: grid; place-items: center; flex: none; }
+.c-row .bi svg { width: 22px; height: 22px; }
+.c-row small { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .1em; color: var(--muted); }
+.c-row b { font-weight: 700; color: var(--navy); font-size: 16px; }
+.c-row a { text-decoration: none; }
+.map { min-height: 460px; position: relative; background: radial-gradient(circle at 50% 46%, rgba(40,168,210,.25) 0 40px, transparent 41px), repeating-linear-gradient(0deg, transparent 0 58px, #fff 58px 64px), repeating-linear-gradient(90deg, transparent 0 78px, #fff 78px 84px), #DCEEF6; }
+.map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+footer { background: var(--navy); color: #A9C3DA; font-size: 14.5px; padding: 60px 0 30px; margin-top: 96px; }
+footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; }
+footer h4 { font-family: 'Montserrat', sans-serif; color: #fff; font-size: 13px; letter-spacing: .12em; margin-bottom: 14px; }
+footer p { margin-top: 14px; max-width: 24em; }
+footer ul { list-style: none; display: grid; gap: 8px; }
+footer a { text-decoration: none; }
+footer a:hover { color: #fff; }
+footer .flogo { display: inline-flex; background: #fff; border-radius: 18px; padding: 12px 18px; }
+footer .copy { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.12); padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13px; }
+footer .copy b { color: #fff; }
+
+.wa-float { position: fixed; right: 22px; bottom: 22px; height: 60px; padding: 0 22px 0 18px; background: var(--wa); color: #fff; display: flex; align-items: center; gap: 10px; border-radius: 999px; box-shadow: 0 14px 30px -10px rgba(0,0,0,.4); z-index: 40; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14.5px; }
+.wa-float svg { width: 28px; height: 28px; }
+
+/* Aparición suave */
+.rv { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .rv { opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+}
+
+@media (max-width: 1060px) {
+    .menu { display: none; }
+    .chip.c1 { left: -10px; } .chip.c3 { left: 0; }
+}
+@media (max-width: 900px) {
+    .topbar, .hide-m, .hero .mol { display: none; }
+    .header .wrap { height: 70px; }
+    .logo img { height: 40px; } .logo .lt b { font-size: 24px; } .logo .lt i { font-size: 13.5px; }
+    .header .btn { padding: 10px 16px; font-size: 13px; }
+    .hero .wrap, .micro .wrap, .home .wrap, .biz .wrap, .faq-sec .wrap, .contact .wrap, .qz { grid-template-columns: 1fr; }
+    .hero .wrap { padding: 44px 0 120px; gap: 20px; }
+    .visual { justify-self: center; max-width: 440px; }
+    .report { margin: 30px 10px 50px; }
+    .chip.c1 { left: -6px; top: -8px; } .chip.c2 { right: -6px; bottom: 0; } .chip.c3 { display: none; }
+    .quick .wrap { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .quick a { padding: 20px 18px; }
+    .checkups, .tips { grid-template-columns: 1fr; }
+    .micro .wrap { gap: 40px; }
+    .dish { max-width: 320px; }
+    .exams { grid-template-columns: 1fr; max-height: 420px; }
+    .qz-sum { position: static; }
+    .steps { grid-template-columns: 1fr; }
+    .trust .wrap { grid-template-columns: 1fr 1fr; }
+    .trust .wrap > div:nth-child(3) { border-left: 0; }
+    .trust .wrap > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .c-info { padding: 30px 24px; }
+    .map { min-height: 320px; }
+    footer .wrap { grid-template-columns: 1fr 1fr; }
+    footer .wrap > div:first-child { grid-column: 1 / -1; }
+    section { padding: 68px 0; }
+    footer { margin-top: 68px; }
+    .wa-float span { display: none; }
+    .wa-float { width: 60px; padding: 0; justify-content: center; }
+}
+@media (max-width: 520px) {
+    .wrap { width: calc(100% - 32px); }
+    .head-cta .btn-cyan { display: none; }
+    .hero h1 { font-size: 38px; }
+    .hero .lead { font-size: 17.5px; }
+    .hero-cta .btn { width: 100%; }
+    .quick .wrap { grid-template-columns: 1fr; }
+    .quick a { flex-direction: row; align-items: center; gap: 14px; }
+    .quick .qi { margin: 0; flex: none; }
+    .quick a > div { display: flex; flex-direction: column; }
+    .micro-list { grid-template-columns: 1fr; }
+    .free { padding: 26px; } .free .big { font-size: 52px; }
+    .ficha { padding: 22px; }
+    .sheet .line { grid-template-columns: 90px 1fr; }
+    .chip { padding: 10px 12px; font-size: 12.5px; } .chip .ci { width: 34px; height: 34px; }
+    .report { padding: 20px; }
+    .row { grid-template-columns: 1fr auto; } .row em { display: none; }
+    footer .wrap { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<!-- Íconos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3z"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none" opacity=".15"/><path d="M7.5 12.5l3 3 6-6.5"/></symbol>
+    <symbol id="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M8 14h3M8 17.5h6"/></symbol>
+    <symbol id="tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.6"/></symbol>
+    <symbol id="home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7.5 9 7.5M5 9.5V20h14V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+    <symbol id="clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h8.5l4 4V21a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5z"/><path d="M14 2.5V7h4.5M9 12h7M9 16h5"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s-7-6.2-7-11.7a7 7 0 0 1 14 0c0 5.5-7 11.7-7 11.7z"/><circle cx="12" cy="9.8" r="2.5"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h3.5l2 5-2.5 1.5a11 11 0 0 0 6.5 6.5L16 13.5l5 2V19a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6.5 7.2 6.5 11.8a6.5 6.5 0 0 1-13 0C5.5 9.7 12 2.5 12 2.5z"/><path d="M9 14.5a3 3 0 0 0 3 3"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5S3 15 3 8.8A4.8 4.8 0 0 1 12 6.5a4.8 4.8 0 0 1 9 2.3c0 6.2-9 11.7-9 11.7z"/><path d="M6.5 12h3l1.5-2.5 2 5 1.5-2.5h3"/></symbol>
+    <symbol id="user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="liver" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5C3 6 6 5 9.5 5.5S17 5 19.5 5 22 7.5 21 9.5c-2.5 5-7 9-11.5 9C6 18.5 3 14 3 9.5z"/><path d="M10 8.5c.5 3 2 5.5 4 7"/></symbol>
+    <symbol id="sugar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="11" height="18" rx="2.5"/><path d="M7 7h5M7 11h5"/><circle cx="9.5" cy="16" r="1.5"/><path d="M18 8v10M18 8l2.5 2.5"/></symbol>
+    <symbol id="cells" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="4.5"/><circle cx="16.5" cy="15" r="4.5"/><circle cx="8" cy="9" r="1.5"/><circle cx="16.5" cy="15" r="1.5"/></symbol>
+    <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l8 3v6c0 5-3.5 8.6-8 10-4.5-1.4-8-5-8-10v-6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="build" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5l8-2.5V21M13 8h6v13"/><path d="M8 8h2M8 12h2M8 16h2M16 12h1M16 16h1"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="11" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></symbol>
+    <symbol id="money" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.8"/><path d="M6 9.5v5M18 9.5v5"/></symbol>
+    <symbol id="search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5L16 16"/></symbol>
+    <symbol id="mol" viewBox="0 0 200 200" fill="none" stroke="#0A5F93" stroke-width="2.5"><path d="M40 60l30-17 30 17v35l-30 17-30-17zM100 60l30-17 30 17v35l-30 17-30-17zM70 112l30 18v35l-30 17-30-17v-35z"/><g fill="#28A8D2" stroke="none"><circle cx="40" cy="60" r="6"/><circle cx="100" cy="95" r="6"/><circle cx="160" cy="60" r="6"/><circle cx="70" cy="182" r="6"/><circle cx="130" cy="112" r="6"/></g></symbol>
+</svg>
+
+<div class="ribbon"><b>Propuesta de diseño</b> preparada por ConixDev para Diacen Laboratorio Clínico · Datos y precios se confirman con ustedes</div>
+
+<div class="topbar">
+    <div class="wrap">
+        <span><i class="dot"></i> Atención <b>las 24 horas</b> · Toma de muestras a domicilio <b>sin recargo</b></span>
+        <span class="hide-m">García Moreno y González Suárez, Cuenca · <b>diacencuenca@gmail.com</b></span>
+    </div>
+</div>
+
+<header class="header" id="top">
+    <div class="wrap">
+        <a class="logo" href="#top" aria-label="Diacen Laboratorio clínico, inicio">
+            <img src="img/logo-icono.svg" alt="">
+            <span class="lt"><b>DIACEN</b><i>Laboratorio clínico</i></span>
+        </a>
+        <nav class="menu" aria-label="Menú principal">
+            <a href="#examenes">Exámenes</a>
+            <a href="#cotizar">Cotizar</a>
+            <a href="#domicilio">A domicilio</a>
+            <a href="#empresas">Empresas</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="head-cta">
+            <a class="btn btn-cyan btn-sm" href="#resultados">Resultados</a>
+            <a class="btn btn-wa btn-sm" href="https://api.whatsapp.com/send?phone=593987073761&text=Hola%20Diacen%2C%20quisiera%20agendar%20mis%20ex%C3%A1menes" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Agendar</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- PORTADA -->
+    <section class="hero" style="padding:0">
+        <svg class="mol a" aria-hidden="true"><use href="#mol"/></svg>
+        <svg class="mol b" aria-hidden="true"><use href="#mol"/></svg>
+        <div class="wrap">
+            <div>
+                <span class="pill soft">Laboratorio clínico microbiológico · Cuenca</span>
+                <h1>Exámenes exactos, <span>precios justos.</span></h1>
+                <p class="lead">Análisis precisos para tu salud, con atención las 24 horas y toma de muestras en tu casa sin costo adicional. Cotiza por WhatsApp sin compromiso.</p>
+                <div class="hero-cta">
+                    <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=593987073761&text=Hola%20Diacen%2C%20quisiera%20agendar%20mis%20ex%C3%A1menes" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Agendar por WhatsApp</a>
+                    <a class="btn btn-line" href="#cotizar"><svg class="i"><use href="#tag"/></svg>Cotiza tu examen</a>
+                </div>
+                <ul class="checks">
+                    <li><svg><use href="#check"/></svg>Servicio 24 horas</li>
+                    <li><svg><use href="#check"/></svg>Domicilio sin recargo</li>
+                    <li><svg><use href="#check"/></svg>Reportes digitales</li>
+                </ul>
+            </div>
+
+            <div class="visual" aria-hidden="true">
+                <div class="circle"></div>
+                <div class="report">
+                    <div class="report-h">
+                        <span class="logo"><img src="img/logo-icono.svg" alt=""><span class="lt"><b>DIACEN</b><i>Laboratorio clínico</i></span></span>
+                        <small>INFORME DE RESULTADOS<b>● Listo</b></small>
+                    </div>
+                    <div class="row"><span>Biometría hemática</span><em>Completa</em><b>NORMAL</b></div>
+                    <div class="row"><span>Glucosa en ayunas</span><em>92 mg/dL</em><b>NORMAL</b></div>
+                    <div class="row"><span>Perfil lipídico</span><em>4 valores</em><b>NORMAL</b></div>
+                    <div class="row"><span>Elemental de orina</span><em>EMO</em><b>NORMAL</b></div>
+                    <div class="bar"><i></i></div>
+                    <div class="report-f"><span>Reporte digital seguro</span><span>Diacen · Cuenca</span></div>
+                </div>
+                <div class="chip c1"><span class="ci"><svg><use href="#home"/></svg></span><span><b>A domicilio</b>Sin costo adicional</span></div>
+                <div class="chip c3"><span class="ci"><svg><use href="#clock"/></svg></span><span><b>24 horas</b>Todos los días</span></div>
+                <div class="chip c2"><span class="ci" style="background:#FFF6DB;color:#C98A00"><svg><use href="#heart"/></svg></span><span><b><span class="stars">★★★★★</span> 5.0</b>Calificación en Google</span></div>
+            </div>
+        </div>
+        <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C240 75 480 75 720 45S1200 5 1440 35V70H0z" fill="#fff"/></svg>
+    </section>
+
+    <!-- ACCESOS RÁPIDOS -->
+    <nav class="quick" aria-label="Accesos rápidos">
+        <div class="wrap">
+            <a href="https://api.whatsapp.com/send?phone=593987073761&text=Hola%20Diacen%2C%20quisiera%20agendar%20una%20cita" target="_blank" rel="noopener">
+                <span class="qi"><svg><use href="#cal"/></svg></span><div><b>Agenda tu cita</b><small>Por WhatsApp, en minutos</small></div></a>
+            <a href="#cotizar">
+                <span class="qi"><svg><use href="#tag"/></svg></span><div><b>Cotiza sin compromiso</b><small>Arma tu lista de exámenes</small></div></a>
+            <a href="#domicilio">
+                <span class="qi"><svg><use href="#home"/></svg></span><div><b>Toma a domicilio</b><small>Sin recargo en Cuenca</small></div></a>
+            <a href="#resultados" id="resultados">
+                <span class="qi"><svg><use href="#doc"/></svg></span><div><b>Resultados en línea</b><small>Consulta tu reporte digital</small></div></a>
+        </div>
+    </nav>
+
+    <!-- CHEQUEOS -->
+    <section id="examenes">
+        <div class="wrap">
+            <div class="title center rv">
+                <span class="pill">Chequeos y perfiles</span>
+                <h2>Controla tu salud <span>a tiempo</span></h2>
+                <p>Paquetes pensados para cada etapa de la vida. Elige uno y añádelo a tu cotización con un clic.</p>
+            </div>
+            <div class="checkups">
+                <article class="ck feat rv">
+                    <span class="tag">Más pedido</span><span class="ico"><svg><use href="#shield"/></svg></span>
+                    <h3>Control de salud integral</h3><p class="for">Exámenes de rutina avanzados para conocer y cuidar tu salud.</p>
+                    <ul><li>Biometría hemática</li><li>Glucosa</li><li>Función renal y hepática</li><li>Perfil de grasas</li><li>Elemental de orina y heces</li></ul>
+                    <button class="btn btn-line btn-sm add" data-add="Control de salud integral">+ Añadir a mi cotización</button>
+                </article>
+                <article class="ck rv">
+                    <span class="tag">Mayores de 60</span><span class="ico"><svg><use href="#user"/></svg></span>
+                    <h3>Adulto mayor</h3><p class="for">Controles geriátricos: diagnóstico oportuno, mejor calidad de vida.</p>
+                    <ul><li>Hematología completa</li><li>Función renal y hepática</li><li>Glucosa y hemoglobina glicosilada</li><li>Examen de orina</li></ul>
+                    <button class="btn btn-line btn-sm add" data-add="Control adulto mayor">+ Añadir a mi cotización</button>
+                </article>
+                <article class="ck rv">
+                    <span class="tag">Control metabólico</span><span class="ico"><svg><use href="#sugar"/></svg></span>
+                    <h3>Chequeo de diabetes</h3><p class="for">Controla tu diabetes hoy mismo y evita complicaciones.</p>
+                    <ul><li>Glucosa en ayunas</li><li>Hemoglobina glicosilada</li><li>Colesterol y triglicéridos</li><li>Examen general de orina</li></ul>
+                    <button class="btn btn-line btn-sm add" data-add="Chequeo de diabetes">+ Añadir a mi cotización</button>
+                </article>
+                <article class="ck rv">
+                    <span class="tag">Salud cardiovascular</span><span class="ico"><svg><use href="#heart"/></svg></span>
+                    <h3>Perfil lipídico</h3><p class="for">La clave para cuidar tu corazón: hazlo antes de que haya síntomas.</p>
+                    <ul><li>Colesterol total</li><li>Colesterol HDL y LDL</li><li>Triglicéridos</li><li>Índice de riesgo cardiovascular</li></ul>
+                    <button class="btn btn-line btn-sm add" data-add="Perfil lipídico">+ Añadir a mi cotización</button>
+                </article>
+                <article class="ck rv">
+                    <span class="tag">Salud hepática</span><span class="ico"><svg><use href="#liver"/></svg></span>
+                    <h3>Perfil hepático</h3><p class="for">Tu hígado trabaja por ti todos los días. Cuídalo a tiempo.</p>
+                    <ul><li>TGO (AST) y TGP (ALT)</li><li>Bilirrubinas</li><li>Fosfatasa alcalina</li><li>GGT</li></ul>
+                    <button class="btn btn-line btn-sm add" data-add="Perfil hepático">+ Añadir a mi cotización</button>
+                </article>
+                <article class="ck rv">
+                    <span class="tag">Señales del cuerpo</span><span class="ico"><svg><use href="#cells"/></svg></span>
+                    <h3>Perfil de anemia</h3><p class="for">¿Cansancio, mareos o piel pálida? Descubre la causa.</p>
+                    <ul><li>Hemograma completo</li><li>Hierro sérico y ferritina</li><li>Vitamina B12</li><li>Reticulocitos</li></ul>
+                    <button class="btn btn-line btn-sm add" data-add="Perfil de anemia">+ Añadir a mi cotización</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- MICROBIOLOGÍA -->
+    <section class="micro">
+        <div class="wrap">
+            <div class="dish rv" aria-hidden="true">
+                <span class="col" style="width:9%;height:9%;left:22%;top:30%"></span>
+                <span class="col" style="width:6%;height:6%;left:30%;top:58%"></span>
+                <span class="col" style="width:11%;height:11%;left:58%;top:62%"></span>
+                <span class="col" style="width:5%;height:5%;left:68%;top:30%"></span>
+                <span class="col" style="width:7%;height:7%;left:44%;top:72%"></span>
+                <span class="disk" style="left:40%;top:22%">AMX</span>
+                <span class="disk" style="left:20%;top:44%">CIP</span>
+                <span class="disk" style="left:58%;top:42%">GEN</span>
+                <span class="pill badge">Antibiograma</span>
+            </div>
+            <div class="rv">
+                <div class="title" style="margin-bottom:0">
+                    <span class="pill">Laboratorio microbiológico</span>
+                    <h2>Identificamos la causa, <span>no solo el síntoma</span></h2>
+                    <p>Cultivos y antibiogramas para que tu médico elija el tratamiento correcto desde el primer día.</p>
+                </div>
+                <div class="micro-list">
+                    <div><b>Urocultivo</b><span>Infecciones urinarias con su antibiograma.</span></div>
+                    <div><b>Coprocultivo</b><span>Bacterias en heces y parasitología.</span></div>
+                    <div><b>Cultivo de secreciones</b><span>Heridas, garganta, vaginal y más.</span></div>
+                    <div><b>Identificación bacteriana</b><span>Ej.: <i>Pseudomonas aeruginosa</i> y su resistencia.</span></div>
+                </div>
+                <p class="quote">Calidad que se ve, salud que se protege.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COTIZADOR -->
+    <section id="cotizar" class="quote-sec">
+        <div class="wrap">
+            <div class="title center rv">
+                <span class="pill">Cotiza sin compromiso</span>
+                <h2>Arma tu lista y <span>recibe el precio por WhatsApp</span></h2>
+                <p>Marca los exámenes que te pidió tu médico. Te respondemos con el valor total y las indicaciones de preparación.</p>
+            </div>
+            <div class="qz rv">
+                <div class="qz-pick">
+                    <label class="search"><svg><use href="#search"/></svg><input id="q" type="search" placeholder="Busca: glucosa, TSH, orina…" aria-label="Buscar examen"></label>
+                    <div class="cats" id="cats" role="tablist" aria-label="Categorías"></div>
+                    <div class="exams" id="exams"></div>
+                </div>
+                <aside class="qz-sum" aria-live="polite">
+                    <h3>Tu cotización <em id="count">0</em></h3>
+                    <ul class="sel" id="sel"></ul>
+                    <div class="opt" role="group" aria-label="Lugar de toma de muestra">
+                        <button type="button" class="on" data-place="En el laboratorio">En laboratorio</button>
+                        <button type="button" data-place="A domicilio (sin recargo)">A domicilio</button>
+                    </div>
+                    <input id="name" type="text" placeholder="Tu nombre (opcional)" aria-label="Tu nombre" autocomplete="name">
+                    <a class="btn btn-wa" id="send" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg class="i"><use href="#wa"/></svg>Pedir cotización</a>
+                    <p class="note"><svg><use href="#shield"/></svg>Sin compromiso. Tu información solo la ve el laboratorio.</p>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOMICILIO -->
+    <section id="domicilio" class="home">
+        <svg class="mol" aria-hidden="true"><use href="#mol"/></svg>
+        <div class="wrap">
+            <div class="rv">
+                <div class="title">
+                    <span class="pill">Servicio a domicilio</span>
+                    <h2>Tomamos tu muestra <span>en casa u oficina</span></h2>
+                    <p>Ideal para adultos mayores, niños y personas con poco tiempo. Sin filas, sin traslados y sin costo adicional.</p>
+                </div>
+                <div class="steps">
+                    <div><b>Escríbenos</b><span>Agenda por WhatsApp el día y la hora.</span></div>
+                    <div><b>Vamos a ti</b><span>Toma de muestra con bioseguridad.</span></div>
+                    <div><b>Recibe tu reporte</b><span>Resultados digitales y seguros.</span></div>
+                </div>
+            </div>
+            <div class="free rv">
+                <div class="big">$0<small>de recargo</small></div>
+                <p>Incluye servicio de toma de muestra a domicilio sin costo adicional dentro de Cuenca.</p>
+                <div class="tel"><div><small>WHATSAPP PRINCIPAL</small><b>098 707 3761</b></div>
+                    <a class="btn btn-wa btn-sm" href="https://api.whatsapp.com/send?phone=593987073761&text=Hola%20Diacen%2C%20quisiera%20solicitar%20toma%20de%20muestras%20a%20domicilio" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Solicitar</a></div>
+                <div class="tel"><div><small>DOMICILIOS</small><b>096 314 9547</b></div>
+                    <a class="btn btn-wa btn-sm" href="https://api.whatsapp.com/send?phone=593963149547&text=Hola%20Diacen%2C%20quisiera%20solicitar%20toma%20de%20muestras%20a%20domicilio" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Solicitar</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMPRESAS -->
+    <section id="empresas" class="biz">
+        <div class="wrap">
+            <div class="ficha rv" aria-hidden="true">
+                <div class="sheet">
+                    <h4>Ficha médica ocupacional</h4>
+                    <span class="sub">PARA EMPRESAS</span>
+                    <div class="line"><i>Colaborador</i><u></u></div>
+                    <div class="line"><i>Cargo</i><u style="width:70%"></u></div>
+                    <div class="line"><i>Tipo</i><span>Preocupacional</span></div>
+                    <div class="line"><i>Exámenes</i><span>BH · Glucosa · EMO · EMH</span></div>
+                    <div class="line"><i>Normativa</i><span>SST Ecuador</span></div>
+                    <span class="apto"><svg class="i"><use href="#tick"/></svg>APTO</span>
+                </div>
+                <div class="chip"><span class="ci"><svg><use href="#lock"/></svg></span><span><b>Reporte digital</b>Listo para RR.HH.</span></div>
+            </div>
+            <div class="rv">
+                <div class="title" style="margin-bottom:0">
+                    <span class="pill">Para empresas</span>
+                    <h2>Fichas médicas <span>ocupacionales</span></h2>
+                    <p>Cuidamos la salud de tu equipo y te ayudamos a cumplir la normativa, sin que tus colaboradores pierdan horas de trabajo.</p>
+                </div>
+                <div class="biz-list">
+                    <div><span class="bi"><svg><use href="#user"/></svg></span><div><b>Preocupacionales, ocupacionales y de retiro</b><span>Todo el ciclo laboral de tu personal.</span></div></div>
+                    <div><span class="bi"><svg><use href="#build"/></svg></span><div><b>Toma de muestras en tu empresa</b><span>Vamos a tus instalaciones.</span></div></div>
+                    <div><span class="bi"><svg><use href="#lock"/></svg></span><div><b>Reportes digitales seguros para RR.HH.</b><span>Ordenados por colaborador.</span></div></div>
+                    <div><span class="bi"><svg><use href="#money"/></svg></span><div><b>Normativa nacional (SST) y costos competitivos</b><span>Planes según el tamaño de tu equipo.</span></div></div>
+                </div>
+                <a class="btn btn-navy" href="https://api.whatsapp.com/send?phone=593987073761&text=Hola%20Diacen%2C%20quisiera%20cotizar%20fichas%20m%C3%A9dicas%20ocupacionales%20para%20mi%20empresa" target="_blank" rel="noopener">Cotizar para mi empresa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONFIANZA -->
+    <section class="trust">
+        <div class="wrap rv">
+            <div><b>5.0<em>★</em></b><span>Calificación en Google</span></div>
+            <div><b>24<em>h</em></b><span>Servicio todos los días</span></div>
+            <div><b><em>$</em>0</b><span>Recargo a domicilio</span></div>
+            <div><b>100<em>%</em></b><span>Reportes digitales</span></div>
+        </div>
+    </section>
+
+    <!-- CONSEJOS -->
+    <section>
+        <div class="wrap">
+            <div class="title center rv">
+                <span class="pill">Consejos de salud</span>
+                <h2>Entiende las señales <span>de tu cuerpo</span></h2>
+            </div>
+            <div class="tips">
+                <article class="tip rv"><div class="tip-art t1"><svg><use href="#cells"/></svg></div>
+                    <div class="tip-b"><small>Después de los 25</small><h3>5 exámenes que deberías hacerte aunque te sientas bien</h3><p>Hemograma, glucosa, colesterol, triglicéridos y examen de orina: lo básico para prevenir.</p><a href="#cotizar">Cotizar estos exámenes →</a></div></article>
+                <article class="tip rv"><div class="tip-art t2"><svg><use href="#liver"/></svg></div>
+                    <div class="tip-b"><small>Hígado graso</small><h3>Tu hígado trabaja por ti todos los días</h3><p>Cansancio, molestias abdominales o malos hábitos: cuídalo antes de que aparezcan síntomas.</p><a href="#examenes">Ver perfil hepático →</a></div></article>
+                <article class="tip rv"><div class="tip-art t3"><svg><use href="#drop"/></svg></div>
+                    <div class="tip-b"><small>Anemia</small><h3>Síntomas y signos que no debes ignorar</h3><p>Debilidad, mareos, uñas frágiles o caída de cabello pueden indicar anemia. Un hemograma lo aclara.</p><a href="#examenes">Ver perfil de anemia →</a></div></article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="faq-sec">
+        <div class="wrap">
+            <div class="title rv" style="margin-bottom:0">
+                <span class="pill">Preguntas frecuentes</span>
+                <h2>Antes de tu <span>examen</span></h2>
+                <p>¿Otra duda? Escríbenos por WhatsApp y te respondemos al momento.</p>
+                <a class="btn btn-wa" style="margin-top:24px" href="https://api.whatsapp.com/send?phone=593987073761&text=Hola%20Diacen%2C%20tengo%20una%20consulta" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Hacer una consulta</a>
+            </div>
+            <div class="faq rv">
+                <details open><summary>¿Necesito ir en ayunas?</summary><p>Para glucosa y perfil lipídico se recomienda un ayuno de 8 a 12 horas. Al cotizar te enviamos las indicaciones de cada examen.</p></details>
+                <details><summary>¿Cuánto cuesta la toma a domicilio?</summary><p>Nada. La toma de muestras a domicilio dentro de Cuenca no tiene recargo: pagas solo tus exámenes.</p></details>
+                <details><summary>¿Cómo recibo mis resultados?</summary><p>Te entregamos un reporte digital seguro. También puedes retirarlo impreso en el laboratorio.</p></details>
+                <details><summary>¿Atienden de noche y fines de semana?</summary><p>Sí, brindamos servicio las 24 horas. Agenda por WhatsApp para atenderte sin esperas.</p></details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact" style="padding-bottom:0">
+            <div class="wrap">
+                <div class="c-info">
+                    <span class="pill">Visítanos en Cuenca</span>
+                    <h2>Estamos cerca de ti</h2>
+                    <div class="c-row"><span class="bi"><svg><use href="#pin"/></svg></span><div><small>DIRECCIÓN</small><b>Calle García Moreno y Av. González Suárez, El Vergel, Cuenca</b></div></div>
+                    <div class="c-row"><span class="bi"><svg><use href="#clock"/></svg></span><div><small>HORARIO</small><b>Servicio las 24 horas</b></div></div>
+                    <div class="c-row"><span class="bi"><svg><use href="#phone"/></svg></span><div><small>WHATSAPP</small><b><a href="https://api.whatsapp.com/send?phone=593987073761" target="_blank" rel="noopener">098 707 3761</a> · <a href="https://api.whatsapp.com/send?phone=593963149547" target="_blank" rel="noopener">096 314 9547</a></b></div></div>
+                    <div class="c-row" style="border:0"><span class="bi"><svg><use href="#mail"/></svg></span><div><small>CORREO</small><b><a href="mailto:diacencuenca@gmail.com">diacencuenca@gmail.com</a></b></div></div>
+                    <a class="btn btn-navy" style="margin-top:18px" href="https://maps.google.com/?cid=8850724109129981302" target="_blank" rel="noopener"><svg class="i"><use href="#pin"/></svg>Cómo llegar</a>
+                </div>
+                <div class="map"><iframe title="Ubicación de Diacen en Cuenca" src="https://www.google.com/maps?q=-2.8986098,-78.9938995&z=16&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+    </section>
+</main>
+
+<footer>
+    <div class="wrap">
+        <div>
+            <span class="flogo"><span class="logo"><img src="img/logo-icono.svg" alt=""><span class="lt"><b>DIACEN</b><i>Laboratorio clínico</i></span></span></span>
+            <p>Laboratorio clínico microbiológico en Cuenca. Exámenes exactos, precios justos.</p>
+        </div>
+        <div><h4>SERVICIOS</h4><ul><li><a href="#examenes">Chequeos y perfiles</a></li><li><a href="#cotizar">Cotizador en línea</a></li><li><a href="#domicilio">Toma a domicilio</a></li><li><a href="#empresas">Fichas ocupacionales</a></li></ul></div>
+        <div><h4>CONTACTO</h4><ul><li>098 707 3761</li><li>096 314 9547</li><li>diacencuenca@gmail.com</li></ul></div>
+        <div><h4>VISÍTANOS</h4><ul><li>García Moreno y González Suárez</li><li>El Vergel, Cuenca</li><li>Abierto 24 horas</li></ul></div>
+        <div class="copy"><span>© 2026 Diacen Laboratorio Clínico. Calidad que se ve, salud que se protege.</span><span>Diseño y desarrollo: <b>ConixDev</b></span></div>
+    </div>
+</footer>
+
+<a class="wa-float" href="https://api.whatsapp.com/send?phone=593987073761&text=Hola%20Diacen%2C%20quisiera%20agendar%20mis%20ex%C3%A1menes" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg><use href="#wa"/></svg><span>¿Te ayudamos?</span></a>
+
+<script>
+(() => {
+    const PHONE = '593987073761';
+    const EXAMS = {
+        'Hematología': ['Biometría hemática (hemograma)', 'Grupo sanguíneo y factor Rh', 'Velocidad de sedimentación (VSG)', 'Tiempo de protrombina (TP / TTP)', 'Reticulocitos'],
+        'Química': ['Glucosa en ayunas', 'Hemoglobina glicosilada (HbA1c)', 'Colesterol total', 'Colesterol HDL / LDL', 'Triglicéridos', 'Urea', 'Creatinina', 'Ácido úrico', 'TGO (AST)', 'TGP (ALT)', 'Bilirrubinas', 'Ferritina', 'Vitamina B12', 'Vitamina D'],
+        'Hormonas': ['TSH', 'T3 y T4 libre', 'Prueba de embarazo (β-HCG)', 'PSA (antígeno prostático)', 'Insulina'],
+        'Orina y heces': ['Elemental y microscópico de orina (EMO)', 'Coproparasitario', 'Sangre oculta en heces', 'Helicobacter pylori en heces'],
+        'Microbiología': ['Urocultivo + antibiograma', 'Coprocultivo', 'Cultivo de secreción', 'KOH (hongos)'],
+        'Inmunología': ['PCR (proteína C reactiva)', 'Factor reumatoideo', 'VIH', 'VDRL (sífilis)', 'Hepatitis B']
+    };
+    const all = Object.entries(EXAMS).flatMap(([cat, list]) => list.map(n => ({ n, cat })));
+    const chosen = new Set();
+    let cat = 'Todos', place = 'En el laboratorio';
+    const $ = s => document.querySelector(s);
+    const tick = '<svg><use href="#tick"/></svg>';
+    const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+    $('#cats').innerHTML = ['Todos', ...Object.keys(EXAMS)].map(c =>
+        `<button type="button" role="tab" aria-selected="${c === cat}" class="${c === cat ? 'on' : ''}" data-cat="${c}">${c}</button>`).join('');
+
+    function drawList() {
+        const q = norm($('#q').value.trim());
+        const items = all.filter(e => (cat === 'Todos' || e.cat === cat) && (!q || norm(e.n).includes(q)));
+        $('#exams').innerHTML = items.length ? items.map(e =>
+            `<button type="button" class="exam" aria-pressed="${chosen.has(e.n)}" data-n="${e.n}"><span class="bx">${tick}</span><span>${e.n}<small>${e.cat}</small></span></button>`).join('')
+            : '<p class="empty-s">No lo encontramos en la lista, pero lo más probable es que sí lo hagamos. Pregúntanos por WhatsApp.</p>';
+    }
+    function drawSum() {
+        const list = [...chosen];
+        $('#count').textContent = list.length;
+        $('#sel').innerHTML = list.length ? list.map(n => `<li>${n}<button type="button" aria-label="Quitar ${n}" data-rm="${n}">×</button></li>`).join('')
+            : '<li class="none">Aún no has elegido exámenes. Márcalos en la lista o añade un chequeo.</li>';
+        const name = $('#name').value.trim();
+        const msg = `Hola Diacen, quisiera cotizar:\n${list.map(n => '• ' + n).join('\n')}\n\nToma de muestra: ${place}` + (name ? `\nNombre: ${name}` : '');
+        $('#send').href = `https://api.whatsapp.com/send?phone=${PHONE}&text=${encodeURIComponent(msg)}`;
+        $('#send').setAttribute('aria-disabled', list.length ? 'false' : 'true');
+        document.querySelectorAll('.add').forEach(b => {
+            const on = chosen.has(b.dataset.add);
+            b.classList.toggle('on', on);
+            b.textContent = on ? '✓ Añadido a tu cotización' : '+ Añadir a mi cotización';
+        });
+    }
+    function toggle(n) { chosen.has(n) ? chosen.delete(n) : chosen.add(n); drawList(); drawSum(); }
+
+    $('#exams').addEventListener('click', e => { const b = e.target.closest('.exam'); if (b) toggle(b.dataset.n); });
+    $('#sel').addEventListener('click', e => { const b = e.target.closest('[data-rm]'); if (b) toggle(b.dataset.rm); });
+    $('#cats').addEventListener('click', e => {
+        const b = e.target.closest('[data-cat]'); if (!b) return;
+        cat = b.dataset.cat;
+        document.querySelectorAll('#cats button').forEach(x => { const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-selected', on); });
+        drawList();
+    });
+    $('#q').addEventListener('input', drawList);
+    $('#name').addEventListener('input', drawSum);
+    document.querySelectorAll('.opt button').forEach(b => b.addEventListener('click', () => {
+        place = b.dataset.place;
+        document.querySelectorAll('.opt button').forEach(x => x.classList.toggle('on', x === b));
+        drawSum();
+    }));
+    document.querySelectorAll('.add').forEach(b => b.addEventListener('click', () => {
+        const added = !chosen.has(b.dataset.add);
+        toggle(b.dataset.add);
+        if (added && innerWidth < 900) $('#cotizar').scrollIntoView();
+    }));
+    drawList(); drawSum();
+
+    // Cabecera con sombra al bajar
+    const h = $('.header');
+    addEventListener('scroll', () => h.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+    // Aparición suave
+    const io = 'IntersectionObserver' in window && new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+})();
+</script>
+</body>
+</html>
