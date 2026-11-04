@@ -4,25 +4,28 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laboratorio Clínico Rueda · La Libertad</title>
-<meta name="description" content="Laboratorio clínico en La Libertad, Santa Elena. Agenda tu examen por WhatsApp y recibe tus resultados sin vueltas.">
+<title>Laboratorios Clínicos Rueda · Calidad y calidez desde 2003</title>
+<meta name="description" content="Laboratorios Clínicos Rueda: exámenes médicos en La Libertad, Santa Elena y Guayaquil. Agenda tus pruebas por WhatsApp y pide servicio a domicilio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /*
-  Demo de ConixDev para Laboratorio Clínico Rueda (propuesta de diseño).
-  Idea visual: los colores de las tapas de los tubos de muestra (lila, rojo,
-  dorado, celeste, verde) son el sistema de color: cada examen tiene su tubo.
+  Demo de ConixDev para Laboratorios Clínicos Rueda (propuesta de diseño).
+  Sigue su identidad: azul marino + celeste de su logo y afiches, títulos grandes
+  en mayúsculas como "AGENDA TUS PRUEBAS". Los tubos de muestra son el motivo visual.
 */
 :root {
-    --ink: #0F2A33;
-    --ink-soft: #4B6470;
+    --navy: #221E5F;
+    --navy-2: #2F2A7A;
+    --cyan: #1FA7E0;
+    --cyan-soft: #E4F5FC;
+    --ink: #1C1A3F;
+    --ink-soft: #55597A;
     --paper: #FFFFFF;
-    --mist: #F2F6F7;
-    --line: #DDE6E9;
-    --brand: #0F6E7A;
-    --lila: #7B6CF6; --rojo: #E5484D; --oro: #F2B01E; --celeste: #3AA9E0; --verde: #2FA36B;
+    --mist: #F3F6FB;
+    --line: #DFE4F0;
     --wa: #1FA855;
+    --rojo: #E5484D; --oro: #F2B01E; --lila: #7B6CF6; --verde: #2FA36B;
     --radius: 22px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,50 +33,57 @@ html { scroll-behavior: smooth; }
 body { font-family: 'Figtree', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.55; font-size: 17px; }
 a { color: inherit; }
 .wrap { width: min(1160px, 100% - 40px); margin: 0 auto; }
-h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; letter-spacing: -0.02em; line-height: 1.05; }
+h1, h2, h3 { font-family: 'Montserrat', sans-serif; letter-spacing: -0.02em; line-height: 1.05; color: var(--navy); }
 
-.ribbon { background: var(--ink); color: #CFE6EA; font-size: 13.5px; text-align: center; padding: 8px 16px; }
+.ribbon { background: var(--navy); color: #C9C6F0; font-size: 13.5px; text-align: center; padding: 8px 16px; }
 .ribbon b { color: #fff; }
 
 /* Barra */
-.nav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 16px; }
+.nav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 16px; }
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.logo-mark { display: flex; gap: 4px; align-items: flex-end; }
-.logo-mark i { width: 9px; border-radius: 3px 3px 5px 5px; background: var(--c); }
-.logo b { font-family: 'Bricolage Grotesque', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
-.logo small { display: block; font-size: 12.5px; color: var(--ink-soft); font-weight: 600; }
+.logo-box { background: linear-gradient(135deg, var(--cyan), #1478C8); color: #fff; border-radius: 10px; padding: 6px 12px 7px; line-height: 1; box-shadow: 0 6px 16px rgba(31,167,224,.35); }
+.logo-box small { display: block; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 8.5px; letter-spacing: .16em; opacity: .95; }
+.logo-box b { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 25px; letter-spacing: -0.03em; }
+.logo-txt { font-size: 13px; font-weight: 600; color: var(--ink-soft); line-height: 1.3; }
+.logo-txt b { color: var(--navy); font-size: 14px; display: block; }
 .nav-links { display: flex; gap: 26px; font-weight: 600; font-size: 15px; }
 .nav-links a { text-decoration: none; color: var(--ink-soft); }
-.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover { color: var(--navy); }
 
 .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; border-radius: 999px; padding: 15px 26px; font-size: 16px; transition: transform .15s; }
 .btn:hover { transform: translateY(-1px); }
-.btn:focus-visible { outline: 3px solid var(--celeste); outline-offset: 3px; }
+.btn:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
 .btn-wa { background: var(--wa); color: #fff; }
-.btn-line { border: 2px solid var(--ink); }
+.btn-line { border: 2px solid var(--navy); color: var(--navy); }
+.btn-light { background: #fff; color: var(--navy); }
 .btn-sm { padding: 10px 18px; font-size: 14.5px; }
 .wa-ico { width: 20px; height: 20px; }
 
 /* Portada */
-.hero { padding: 72px 0 56px; }
+.hero { padding: 64px 0 56px; background: linear-gradient(180deg, var(--cyan-soft) 0%, #fff 75%); }
 .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
-.rating { display: inline-flex; align-items: center; gap: 10px; background: var(--mist); border-radius: 999px; padding: 8px 16px 8px 10px; font-weight: 600; font-size: 15px; }
-.rating span { background: #fff; border-radius: 999px; padding: 3px 10px; font-weight: 800; color: #B7791F; }
-.hero h1 { font-size: clamp(44px, 6vw, 76px); font-weight: 800; margin: 22px 0 20px; }
-.hero p { font-size: 20px; color: var(--ink-soft); max-width: 34em; }
-.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-weight: 700; font-size: 14px; color: var(--navy); }
+.chip span { color: #C98A10; }
+.kicker { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; color: var(--navy); margin-top: 26px; }
+.hero h1 { font-size: clamp(56px, 8vw, 104px); font-weight: 900; letter-spacing: -0.03em; margin: 2px 0 18px; color: var(--navy); }
+.hero p { font-size: 20px; color: var(--ink-soft); max-width: 32em; }
+.hero p b { color: var(--navy); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
 
 /* Tubos */
-.rack { position: relative; background: var(--mist); border-radius: 36px; padding: 48px 34px 0; height: 470px; overflow: hidden; }
-.rack-tubes { display: flex; justify-content: center; gap: 22px; align-items: flex-end; height: 100%; }
+.rack { position: relative; background: linear-gradient(160deg, var(--navy-2), var(--navy)); border-radius: 36px; padding: 48px 34px 0; height: 470px; overflow: hidden; }
+.rack::before { content: ''; position: absolute; width: 380px; height: 380px; right: -120px; top: -140px; border-radius: 50%; background: radial-gradient(circle, rgba(31,167,224,.55), transparent 70%); }
+.rack-tubes { position: relative; display: flex; justify-content: center; gap: 22px; align-items: flex-end; height: 100%; }
 .tube { width: 54px; display: flex; flex-direction: column; align-items: center; animation: rise .9s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--i) * .08s); }
-.tube .cap { width: 62px; height: 46px; border-radius: 12px 12px 6px 6px; background: var(--c); box-shadow: inset 0 -8px 0 rgba(0,0,0,.12); }
-.tube .glass { width: 54px; height: var(--h); background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,255,255,.65)); border: 2px solid #C9D7DB; border-top: 0; border-radius: 0 0 27px 27px; position: relative; overflow: hidden; }
+.tube .cap { width: 62px; height: 46px; border-radius: 12px 12px 6px 6px; background: var(--c); box-shadow: inset 0 -8px 0 rgba(0,0,0,.14); }
+.tube .glass { width: 54px; height: var(--h); background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,255,255,.7)); border-radius: 0 0 27px 27px; position: relative; overflow: hidden; }
 .tube .glass::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 42%; background: var(--fill); opacity: .85; }
 .tube .lbl { position: absolute; left: 8px; right: 8px; top: 30px; height: 64px; background: #fff; border-radius: 6px; border: 1px solid var(--line); }
-.rack-base { position: absolute; left: 0; right: 0; bottom: 0; height: 74px; background: var(--ink); }
-.rack-note { position: absolute; left: 24px; top: 22px; font-size: 13px; font-weight: 700; color: var(--ink-soft); }
+.tube .lbl::before { content: ''; position: absolute; left: 6px; right: 6px; top: 8px; height: 10px; border-radius: 3px; background: var(--cyan); }
+.rack-base { position: absolute; left: 0; right: 0; bottom: 0; height: 74px; background: #fff; opacity: .12; }
+.rack-note { position: absolute; left: 26px; top: 22px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #BFE9FA; letter-spacing: .06em; }
 @keyframes rise { from { transform: translateY(60px); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .tube { animation: none; } html { scroll-behavior: auto; } }
 
@@ -87,34 +97,44 @@ section { padding: 84px 0; }
 .exams { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .exam { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: grid; grid-template-columns: 14px 1fr; gap: 6px 18px; align-content: start; }
 .exam::before { content: ''; grid-row: span 3; width: 14px; height: 54px; border-radius: 4px 4px 8px 8px; background: var(--c); }
-.exam h3 { font-size: 22px; font-weight: 800; }
+.exam h3 { font-size: 21px; font-weight: 800; }
 .exam p { color: var(--ink-soft); font-size: 15.5px; }
-.exam small { font-weight: 700; font-size: 14px; color: var(--brand); }
+.exam small { font-weight: 700; font-size: 14px; color: #1478C8; }
 
-.steps-band { background: var(--ink); color: #fff; border-radius: 40px; padding: 64px 48px; }
-.steps-band .sec-head p { color: #A9C3CA; }
+/* Domicilio */
+.home-band { background: linear-gradient(120deg, var(--cyan) 0%, #1478C8 100%); color: #fff; border-radius: 40px; padding: 56px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: center; }
+.home-band h2 { color: #fff; font-size: clamp(34px, 4vw, 52px); font-weight: 900; }
+.home-band p { color: #E6F6FD; font-size: 18px; margin-top: 12px; max-width: 30em; }
+.home-num { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); border-radius: 26px; padding: 28px; text-align: center; }
+.home-num small { display: block; font-weight: 700; font-size: 14px; color: #DDF3FC; }
+.home-num b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 40px; letter-spacing: -0.02em; margin: 6px 0 16px; }
+
+.steps-band { background: var(--navy); color: #fff; border-radius: 40px; padding: 64px 48px; }
+.steps-band h2 { color: #fff; }
+.steps-band .sec-head p { color: #B9B6E6; }
 .steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: s; }
 .steps li { counter-increment: s; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 26px; }
-.steps li::before { content: counter(s); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--c); color: var(--ink); font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; margin-bottom: 18px; }
-.steps h3 { font-size: 21px; margin-bottom: 8px; }
-.steps p { color: #C3D6DB; font-size: 15.5px; }
+.steps li::before { content: counter(s); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--cyan); color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 21px; margin-bottom: 18px; }
+.steps h3 { font-size: 20px; margin-bottom: 8px; color: #fff; }
+.steps p { color: #C9C6F0; font-size: 15.5px; }
+
+.sedes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.sede { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+.sede span { font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 800; letter-spacing: .08em; color: #1478C8; }
+.sede h3 { font-size: 26px; font-weight: 800; }
+.sede p { color: var(--ink-soft); font-size: 15.5px; }
+.sede a.map-link { margin-top: auto; font-weight: 700; color: var(--navy); text-decoration: none; font-size: 15px; }
+.sede.matriz { background: var(--mist); border-color: transparent; }
 
 .prep { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .prep div { background: var(--mist); border-radius: var(--radius); padding: 28px; }
-.prep h3 { font-size: 22px; margin-bottom: 10px; }
+.prep h3 { font-size: 21px; margin-bottom: 10px; }
 .prep ul { padding-left: 20px; color: var(--ink-soft); }
 
-.visit .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: stretch; }
-.visit-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; display: flex; flex-direction: column; gap: 18px; }
-.visit-card dt { font-size: 13px; font-weight: 700; color: var(--ink-soft); }
-.visit-card dd { font-size: 18px; font-weight: 600; }
-.map { position: relative; display: block; border-radius: var(--radius); overflow: hidden; min-height: 360px; text-decoration: none; }
-.map-art { position: absolute; inset: 0; width: 100%; height: 100%; }
-.pin { position: absolute; left: 50%; top: 44%; width: 46px; height: 46px; margin: -46px 0 0 -23px; background: var(--rojo); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 10px 24px rgba(229,72,77,.45); }
-.pin::after { content: ''; position: absolute; inset: 14px; background: #fff; border-radius: 50%; }
-.map-label { position: absolute; left: 20px; right: 20px; bottom: 20px; background: #fff; border-radius: 16px; padding: 16px 18px; font-size: 14px; color: var(--ink-soft); box-shadow: 0 10px 30px rgba(15,42,51,.12); }
-.map-label b { display: block; color: var(--ink); font-size: 17px; }
-.map:hover .map-label { color: var(--brand); }
+.since { text-align: center; padding: 70px 0; }
+.since b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(64px, 10vw, 130px); letter-spacing: -0.04em; color: var(--navy); line-height: 1; }
+.since p { font-size: 22px; color: var(--ink-soft); margin-top: 10px; }
+.since p em { font-style: normal; color: #1478C8; font-weight: 700; }
 
 footer { border-top: 1px solid var(--line); padding: 36px 0; color: var(--ink-soft); font-size: 14.5px; }
 footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
@@ -123,36 +143,34 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .wa-float svg { width: 32px; height: 32px; }
 
 @media (max-width: 900px) {
-    .nav-links { display: none; }
-    .hero { padding: 44px 0 32px; }
-    .hero .wrap, .visit .wrap { grid-template-columns: 1fr; gap: 34px; }
-    .rack { height: 330px; padding-top: 40px; }
+    .nav-links, .logo-txt { display: none; }
+    .ribbon { font-size: 12px; padding: 6px 12px; }
+    .hero { padding: 40px 0 32px; }
+    .kicker { font-size: 20px; }
+    .hero .wrap, .home-band { grid-template-columns: 1fr; gap: 30px; }
+    .rack { height: 320px; padding-top: 40px; }
     .rack-tubes { gap: 12px; }
     .tube { width: 40px; } .tube .glass { width: 40px; height: calc(var(--h) * .55); } .tube .cap { width: 46px; height: 36px; }
     .tube .lbl { top: 18px; height: 40px; }
-    .rack-note { left: 20px; top: 16px; }
-    .ribbon { font-size: 12px; padding: 6px 12px; }
-    .logo b { font-size: 18px; }
-    .exams, .steps, .prep { grid-template-columns: 1fr; }
+    .exams, .steps, .prep, .sedes { grid-template-columns: 1fr; }
     section { padding: 56px 0; }
-    .steps-band { border-radius: 28px; padding: 40px 20px; }
-    .nav .btn-sm { padding: 9px 14px; }
+    .steps-band, .home-band { border-radius: 28px; padding: 40px 22px; }
 }
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute"><symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3z"/></symbol></svg>
 
-<div class="ribbon"><b>Propuesta de diseño</b> preparada por ConixDev para Laboratorio Clínico Rueda · Los textos marcados como ejemplo se ajustan con su información real</div>
+<div class="ribbon"><b>Propuesta de diseño</b> preparada por ConixDev para Laboratorios Clínicos Rueda · Los textos marcados como ejemplo se ajustan con su información real</div>
 
 <header class="nav">
     <div class="wrap">
         <a class="logo" href="#">
-            <span class="logo-mark" aria-hidden="true"><i style="--c:var(--lila);height:22px"></i><i style="--c:var(--rojo);height:30px"></i><i style="--c:var(--oro);height:18px"></i><i style="--c:var(--celeste);height:26px"></i></span>
-            <span><b>Laboratorio Clínico Rueda</b><small>La Libertad, Santa Elena</small></span>
+            <span class="logo-box"><small>LABORATORIO CLÍNICO</small><b>Rueda</b></span>
+            <span class="logo-txt"><b>Calidad y calidez</b>desde 2003</span>
         </a>
-        <nav class="nav-links"><a href="#examenes">Exámenes</a><a href="#como">Cómo funciona</a><a href="#indicaciones">Indicaciones</a><a href="#visitanos">Visítanos</a></nav>
-        <a class="btn btn-wa btn-sm" href="https://api.whatsapp.com/send?phone=593994253872&text=Hola%2C%20quisiera%20agendar%20un%20examen" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg>Agendar</a>
+        <nav class="nav-links"><a href="#examenes">Exámenes</a><a href="#domicilio">A domicilio</a><a href="#sedes">Sedes</a><a href="#indicaciones">Indicaciones</a></nav>
+        <a class="btn btn-wa btn-sm" href="https://api.whatsapp.com/send?phone=593994253872&text=Hola%2C%20quisiera%20agendar%20mis%20pruebas" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg>Agendar</a>
     </div>
 </header>
 
@@ -160,21 +178,26 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
     <section class="hero">
         <div class="wrap">
             <div>
-                <span class="rating"><span>4.9 ★</span> 291 reseñas en Google</span>
-                <h1>Resultados confiables, sin vueltas.</h1>
-                <p>Laboratorio clínico en La Libertad. Agenda tu examen por WhatsApp, haz tu toma de muestra sin esperas y recibe tus resultados donde estés.</p>
+                <div class="chips">
+                    <span class="chip"><span>4.9 ★</span> 291 reseñas</span>
+                    <span class="chip">Desde 2003</span>
+                    <span class="chip">10.8K en Instagram</span>
+                </div>
+                <div class="kicker">AGENDA TUS</div>
+                <h1>PRUEBAS</h1>
+                <p>Exámenes médicos con <b>calidad y calidez</b> en La Libertad, Santa Elena y Guayaquil. Agenda por WhatsApp, pide toma de muestra <b>a domicilio</b> y recibe tus resultados donde estés.</p>
                 <div class="hero-cta">
-                    <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=593994253872&text=Hola%2C%20quisiera%20agendar%20un%20examen" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg>Agendar por WhatsApp</a>
-                    <a class="btn btn-line" href="#examenes">Ver exámenes</a>
+                    <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=593994253872&text=Hola%2C%20quisiera%20agendar%20mis%20pruebas" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg>Agendar por WhatsApp</a>
+                    <a class="btn btn-line" href="#domicilio">Servicio a domicilio</a>
                 </div>
             </div>
             <div class="rack" aria-hidden="true">
-                <span class="rack-note">Cada examen, su tubo</span>
+                <span class="rack-note">CITAS 08H00 – 17H00</span>
                 <div class="rack-tubes">
                     <div class="tube" style="--i:0;--c:var(--lila);--h:250px;--fill:#C7302F"><div class="cap"></div><div class="glass"><div class="lbl"></div></div></div>
                     <div class="tube" style="--i:1;--c:var(--rojo);--h:290px;--fill:#E9C46A"><div class="cap"></div><div class="glass"><div class="lbl"></div></div></div>
                     <div class="tube" style="--i:2;--c:var(--oro);--h:230px;--fill:#F4D35E"><div class="cap"></div><div class="glass"><div class="lbl"></div></div></div>
-                    <div class="tube" style="--i:3;--c:var(--celeste);--h:270px;--fill:#C7302F"><div class="cap"></div><div class="glass"><div class="lbl"></div></div></div>
+                    <div class="tube" style="--i:3;--c:var(--cyan);--h:270px;--fill:#C7302F"><div class="cap"></div><div class="glass"><div class="lbl"></div></div></div>
                     <div class="tube" style="--i:4;--c:var(--verde);--h:240px;--fill:#E9C46A"><div class="cap"></div><div class="glass"><div class="lbl"></div></div></div>
                 </div>
                 <div class="rack-base"></div>
@@ -186,32 +209,74 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
         <div class="wrap">
             <div class="sec-head">
                 <h2>Los exámenes que más nos piden</h2>
-                <p class="hint">Lista de ejemplo: la completamos con sus exámenes, precios y tiempos reales.</p>
+                <p class="hint">Lista de ejemplo: la completamos con su catálogo, precios y tiempos reales.</p>
             </div>
             <div class="exams">
                 <article class="exam" style="--c:var(--lila)"><h3>Hemograma completo</h3><p>Glóbulos rojos, blancos y plaquetas. Ideal para un chequeo general.</p><small>Resultado el mismo día</small></article>
                 <article class="exam" style="--c:var(--oro)"><h3>Glucosa y hemoglobina glicosilada</h3><p>Control y prevención de la diabetes.</p><small>Requiere ayuno</small></article>
                 <article class="exam" style="--c:var(--oro)"><h3>Perfil lipídico</h3><p>Colesterol total, HDL, LDL y triglicéridos.</p><small>Requiere ayuno</small></article>
                 <article class="exam" style="--c:var(--rojo)"><h3>Perfil tiroideo</h3><p>TSH, T3 y T4 para evaluar la tiroides.</p><small>Resultado en 24 horas</small></article>
-                <article class="exam" style="--c:var(--celeste)"><h3>Orina y heces</h3><p>Exámenes de rutina, con indicaciones claras para tomar la muestra.</p><small>Te damos el frasco</small></article>
+                <article class="exam" style="--c:var(--cyan)"><h3>Orina y heces</h3><p>Exámenes de rutina, con indicaciones claras para tomar la muestra.</p><small>Te damos el frasco</small></article>
                 <article class="exam" style="--c:var(--verde)"><h3>Prueba de embarazo en sangre</h3><p>Beta HCG cuantitativa, confiable desde los primeros días.</p><small>Resultado el mismo día</small></article>
             </div>
         </div>
     </section>
 
-    <section id="como">
+    <section id="domicilio" style="padding-top:0">
+        <div class="wrap home-band">
+            <div>
+                <h2>Servicio a domicilio</h2>
+                <p>Tomamos tu muestra en casa o en tu oficina. Sin traslados, sin filas: ideal para adultos mayores, niños y chequeos de toda la familia.</p>
+            </div>
+            <div class="home-num">
+                <small>Guayaquil · agenda tu visita</small>
+                <b>099 994 3032</b>
+                <a class="btn btn-light" href="https://api.whatsapp.com/send?phone=593999943032&text=Hola%2C%20quisiera%20agendar%20una%20toma%20de%20muestra%20a%20domicilio" target="_blank" rel="noopener"><svg class="wa-ico" style="color:var(--wa)"><use href="#wa"/></svg>Pedir a domicilio</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="como" style="padding-top:0">
         <div class="wrap steps-band">
             <div class="sec-head"><h2>Así de simple</h2><p>Sin filas largas ni papeles que se pierden.</p></div>
             <ol class="steps">
-                <li style="--c:var(--lila)"><h3>Agenda por WhatsApp</h3><p>Escríbenos el examen y el día. Te confirmamos al instante.</p></li>
-                <li style="--c:var(--oro)"><h3>Prepárate</h3><p>Te enviamos las indicaciones: ayuno, horario y qué traer.</p></li>
-                <li style="--c:var(--celeste)"><h3>Toma de muestra</h3><p>Llega a tu hora y te atendemos sin esperas.</p></li>
-                <li style="--c:var(--verde)"><h3>Recibe tus resultados</h3><p>Te llegan por WhatsApp o correo, listos para tu médico.</p></li>
+                <li><h3>Agenda por WhatsApp</h3><p>Escríbenos el examen y el día. Citas de 08h00 a 17h00.</p></li>
+                <li><h3>Prepárate</h3><p>Te enviamos las indicaciones: ayuno, horario y qué traer.</p></li>
+                <li><h3>Toma de muestra</h3><p>En cualquiera de nuestras sedes o en tu casa.</p></li>
+                <li><h3>Recibe tus resultados</h3><p>Te llegan por WhatsApp o correo, listos para tu médico.</p></li>
             </ol>
         </div>
     </section>
 
-    <section id="indicaciones">
+    <section id="sedes">
+        <div class="wrap">
+            <div class="sec-head"><h2>Nuestras sedes</h2><p>Cerca de ti en la península y en Guayaquil.</p></div>
+            <div class="sedes">
+                <article class="sede matriz">
+                    <span>MATRIZ</span>
+                    <h3>La Libertad</h3>
+                    <p>Av. 9 de Octubre, Edificio Liberty Business, planta baja, locales 3 y 4 (Calle 14)</p>
+                    <p>WhatsApp 099 425 3872</p>
+                    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Laboratorio+Cl%C3%ADnico+Rueda+La+Libertad" target="_blank" rel="noopener">Cómo llegar ↗</a>
+                </article>
+                <article class="sede">
+                    <span>SUCURSAL</span>
+                    <h3>Santa Elena</h3>
+                    <p><span class="hint">Dirección y teléfono por confirmar</span></p>
+                    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Laboratorio+Rueda+Santa+Elena" target="_blank" rel="noopener">Cómo llegar ↗</a>
+                </article>
+                <article class="sede">
+                    <span>GUAYAQUIL</span>
+                    <h3>Guayaquil</h3>
+                    <p>Servicio a domicilio y citas de 08h00 a 17h00.</p>
+                    <p>WhatsApp 099 994 3032</p>
+                    <a class="map-link" href="https://api.whatsapp.com/send?phone=593999943032" target="_blank" rel="noopener">Escribir ↗</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="indicaciones" style="padding-top:0">
         <div class="wrap">
             <div class="sec-head"><h2>Antes de tu examen</h2><p>Indicaciones generales. Si tienes dudas, escríbenos.</p></div>
             <div class="prep">
@@ -221,35 +286,14 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
         </div>
     </section>
 
-    <section id="visitanos" class="visit">
-        <div class="wrap">
-            <dl class="visit-card">
-                <h2 style="font-size:40px">Visítanos</h2>
-                <div><dt>Dirección</dt><dd>Av. 9 de Octubre, Edificio Liberty Business, planta baja, locales 3 y 4 (Calle 14), La Libertad</dd></div>
-                <div><dt>WhatsApp</dt><dd>099 425 3872</dd></div>
-                <div><dt>Horario</dt><dd><span class="hint">Ejemplo: lunes a sábado, desde las 7:00</span></dd></div>
-                <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=593994253872" target="_blank" rel="noopener" style="align-self:flex-start"><svg class="wa-ico"><use href="#wa"/></svg>Escríbenos</a>
-            </dl>
-            <a class="map" href="https://www.google.com/maps/search/?api=1&query=Laboratorio+Cl%C3%ADnico+Rueda+La+Libertad" target="_blank" rel="noopener" aria-label="Abrir la ubicación en Google Maps">
-                <svg class="map-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                    <rect width="600" height="400" fill="#E8F0F2"/>
-                    <path d="M0 300 Q 160 250 300 280 T 600 240 L600 400 L0 400Z" fill="#CFE6EE"/>
-                    <g stroke="#fff" stroke-width="18" fill="none" stroke-linecap="round">
-                        <path d="M-20 120 L620 170"/><path d="M180 -20 L230 420"/><path d="M420 -20 L380 420"/><path d="M-20 230 L620 260"/>
-                    </g>
-                    <g stroke="#fff" stroke-width="7" fill="none"><path d="M60 -20 L90 420"/><path d="M300 -20 L310 420"/><path d="M520 -20 L500 420"/></g>
-                    <text x="250" y="112" font-size="15" font-weight="700" fill="#4B6470" font-family="Figtree, sans-serif" transform="rotate(4 250 112)">Av. 9 de Octubre</text>
-                    <text x="470" y="370" font-size="14" font-weight="700" fill="#5F8D9B" font-family="Figtree, sans-serif">Océano Pacífico</text>
-                </svg>
-                <span class="pin" aria-hidden="true"></span>
-                <span class="map-label"><b>Laboratorio Clínico Rueda</b>Edificio Liberty Business · Abrir en Google Maps ↗</span>
-            </a>
-        </div>
-    </section>
+    <div class="since wrap">
+        <b>Desde 2003</b>
+        <p>Sirviendo con <em>calidad y calidez</em> a las familias de la península y Guayaquil.</p>
+    </div>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Laboratorio Clínico Rueda · La Libertad, Santa Elena</span><span>Diseño de muestra por ConixDev</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Laboratorios Clínicos Rueda · La Libertad · Santa Elena · Guayaquil</span><span>Diseño de muestra por ConixDev</span></div></footer>
 
-<a class="wa-float" href="https://api.whatsapp.com/send?phone=593994253872&text=Hola%2C%20quisiera%20agendar%20un%20examen" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg style="color:#fff"><use href="#wa"/></svg></a>
+<a class="wa-float" href="https://api.whatsapp.com/send?phone=593994253872&text=Hola%2C%20quisiera%20agendar%20mis%20pruebas" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg style="color:#fff"><use href="#wa"/></svg></a>
 </body>
 </html>
